@@ -1,0 +1,9 @@
+Putting a
+string to
+test how
+to read
+a file
+and show
+the contents
+of the
+file.
