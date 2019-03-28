@@ -6,7 +6,7 @@
 /*   By: mbutt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/27 12:54:13 by mbutt             #+#    #+#             */
-/*   Updated: 2019/03/28 12:42:41 by mbutt            ###   ########.fr       */
+/*   Updated: 2019/03/28 16:21:08 by mbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,15 +54,16 @@ int main() {
     fclose( f );
 }
 */
-void func() {
-	static	int x = 0;
-	/* x is initialized only once across five calls of func() and
-	  the variable will get incremented five
-	  times after these calls. The final value of x will be 5. */
-	x++;
-	printf("%d\n", x); // outputs the value of x
-}
-
+// Code taken from wikipedia/Static_variable
+//void func() {
+//	static	int x = 0;
+//	/* x is initialized only once across five calls of func() and
+//	  the variable will get incremented five
+//	  times after these calls. The final value of x will be 5. */
+//	x++;
+//	printf("%d\n", x); // outputs the value of x
+//}
+/*
 int main() { //int argc, char *argv[] inside the main is optional in the particular program
 	func(); // prints 1
 	func(); // prints 2
@@ -70,4 +71,39 @@ int main() { //int argc, char *argv[] inside the main is optional in the particu
 	func(); // prints 4
 	func(); // prints 5
 	return 0;
+}
+*/
+int main (void)
+{
+//---------------------------------------------------------------------------
+//Following thenewboston youtube tutorial
+// declare variable that will hold the contents of th file
+	FILE * fpointer;
+
+// opens the file and stores it in 	
+	fpointer = fopen("test.txt", "r");
+	char singleLine[150];
+
+	while(!feof(fpointer))
+	{
+		fgets(singleLine, 150, fpointer);
+//		puts(singleLine);
+		printf("%s",singleLine);
+	}
+	printf("---------------------------------------------------------------\n");
+	fclose(fpointer);
+//--------------------------------------------------------------------------
+//Following Bluefever software youtube tutorial to see how while loops work differently
+
+	FILE *pToFile = fopen("test.txt", "r");
+	int line = 0;
+	char input[512];
+	while (fgets(input, 512, pToFile))
+	{
+		line++;
+		printf("%s",input);
+//		puts(input);
+	}
+	fclose(pToFile);
+	return(0);
 }
