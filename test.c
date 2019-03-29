@@ -6,7 +6,7 @@
 /*   By: mbutt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/27 12:54:13 by mbutt             #+#    #+#             */
-/*   Updated: 2019/03/28 16:21:08 by mbutt            ###   ########.fr       */
+/*   Updated: 2019/03/28 22:11:48 by mbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,23 +82,25 @@ int main (void)
 
 // opens the file and stores it in 	
 	fpointer = fopen("test.txt", "r");
-	char singleLine[150];
+	char singleLine[3];
 
 	while(!feof(fpointer))
 	{
-		fgets(singleLine, 150, fpointer);
+		fgets(singleLine, 3, fpointer); // we are trying tp replicate this fgets
+//		getline(singleLine, 150, fpointer);
 //		puts(singleLine);
 		printf("%s",singleLine);
 	}
-	printf("---------------------------------------------------------------\n");
 	fclose(fpointer);
+	printf("---------------------------------------------------------------\n");
 //--------------------------------------------------------------------------
 //Following Bluefever software youtube tutorial to see how while loops work differently
 
 	FILE *pToFile = fopen("test.txt", "r");
 	int line = 0;
-	char input[512];
-	while (fgets(input, 512, pToFile))
+	char input[3];
+	while (fgets(input, 3, pToFile)) // we are trying to replicate this fgets.
+//	while(getline(input, 512,pToFile))
 	{
 		line++;
 		printf("%s",input);
