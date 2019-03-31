@@ -9,4 +9,8 @@ RETURN VALUE: Open returns an int value, which is the file descriptor. If a file
 
 Flag has the following access modes: O_RDONLY, O_WRONLY, O_RDWR.
 
-O_RDONLY stands for read only. O_WRONLY stands for write only. O_RDWR stands for read/write.
+O_RDONLY stands for read only.
+
+O_WRONLY stands for write only.
+
+O_RDWR stands for read/write.
