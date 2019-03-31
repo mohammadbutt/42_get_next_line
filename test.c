@@ -6,7 +6,7 @@
 /*   By: mbutt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/27 12:54:13 by mbutt             #+#    #+#             */
-/*   Updated: 2019/03/28 22:11:48 by mbutt            ###   ########.fr       */
+/*   Updated: 2019/03/29 13:51:38 by mbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,16 +80,17 @@ int main (void)
 // declare variable that will hold the contents of th file
 	FILE * fpointer;
 
-// opens the file and stores it in 	
+// opens the file and stores it in fpointer.	
 	fpointer = fopen("test.txt", "r");
-	char singleLine[3];
+
+	char singleLine[150];
 
 	while(!feof(fpointer))
 	{
-		fgets(singleLine, 3, fpointer); // we are trying tp replicate this fgets
+		fgets(singleLine, 150, fpointer); // we are trying tp replicate this fgets
 //		getline(singleLine, 150, fpointer);
 //		puts(singleLine);
-		printf("%s",singleLine);
+		printf("%s",singleLine); // For fgets
 	}
 	fclose(fpointer);
 	printf("---------------------------------------------------------------\n");
