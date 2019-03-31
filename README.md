@@ -1,5 +1,5 @@
 # 42_get_next_line
-# Project status - Still in Progress
+# Project status - In Progress
 This project, get_next_line, opens and reads a file or input from a user and then prints out a line.
 
 Below are some notes on the functions that are being used.
