@@ -6,7 +6,7 @@
 /*   By: mbutt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/27 11:25:40 by mbutt             #+#    #+#             */
-/*   Updated: 2019/03/31 15:38:15 by mbutt            ###   ########.fr       */
+/*   Updated: 2019/03/31 20:52:55 by mbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ int main (void)
 	{
 		buf = read(fd, dest, BUFF_SIZE);
 		dest[buf] = '\0';
-		printf("%d\n", buf);
+		printf("buff:|%d|\n", buf);
 		if(buf < BUFF_SIZE)
 		{
 			printf("|%s|\n", dest);
