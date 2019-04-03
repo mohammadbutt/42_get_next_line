@@ -17,6 +17,7 @@ O_RDWR stands for read/write.
 
 
 
+
 To compile include libft library as shown below:
 
 gcc get_next_line.c -I. ./libft/libft.a
