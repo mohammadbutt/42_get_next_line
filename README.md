@@ -14,3 +14,6 @@ O_RDONLY stands for read only.
 O_WRONLY stands for write only.
 
 O_RDWR stands for read/write.
+
+To compile include libft library as shown below:
+gcc get_next_line.c -I. ./libft/libft.a
