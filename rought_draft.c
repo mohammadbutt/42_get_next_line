@@ -6,7 +6,7 @@
 /*   By: mbutt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/27 11:25:40 by mbutt             #+#    #+#             */
-/*   Updated: 2019/04/03 12:10:55 by mbutt            ###   ########.fr       */
+/*   Updated: 2019/04/04 12:22:21 by mbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,7 @@ int main (void)
 	int buf;
 	int fd;
 	int i;
+	char *placeholder;
 
 	i = 0;
 // How to get a file desriptor?
@@ -119,7 +120,7 @@ int main (void)
 
 
 // Printing fd that we get from openining a file ^.
-	printf("file descriptor:|%d|\n", fd);
+//	printf("file descriptor:|%d|\n", fd);
 
 
 // Understanding this while loop.
@@ -167,11 +168,39 @@ int main (void)
 */
 
 	printf("BUFF_SIZE:|%d|\n", BUFF_SIZE);
-	while(read(fd, dest, BUFF_SIZE))
+	while((buf = read(fd, dest, BUFF_SIZE)))
 	{
-		read(fd, dest, BUFF_SIZE);
-		final_dest = ft_strsplit(dest, '\n');
-		printf("%s", final_dest[0]); // with a BUFF_SIZE of 32, it prints last line. Strange behavior with BUFF_SIZE of 1.
+												//	buf = read(fd, dest, BUFF_SIZE); Keep it commented
+	//	printf("\nbuf|%d|\n", buf);
+	//	dest[buf] = '\0';
+		final_dest = ft_strsplit(dest, '\n'); // Put it back on
+//		printf("%c", final_dest[0][0]); // 46 characters is maximum length
+																//		printf("%s", dest);	Dont use it.
+//		break; // Include break, so it can stop reading the next character
+	/*	Prints the whole file
+		dest[buf]	= '\0';
+		printf("%s", dest);
+	*/	
+//		dest[buf] = '\0';			
+//		while(final_dest[0][i])
+//		{
+			printf("%c", final_dest[0][0]);
+//			printf("%d\n",i);
+//			i++;
+//		}
+//		while(final_dest[0][i])
+//		{
+//			printf("%c", final_dest[0][i]);
+//			printf("%d\n", i);
+//			i++;
+//		}
+
+//		if(final_dest[0] == '\0')// Prints the first line, if BUFF_SIZE is set to 1.
+//		{
+//			break;
+//		}
+
+	//	dest[buf-1] = '\0';
 	}
 
 //	printf("%s", *(final_dest + 1));
