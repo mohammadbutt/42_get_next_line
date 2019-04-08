@@ -6,7 +6,7 @@
 /*   By: mbutt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 12:24:02 by mbutt             #+#    #+#             */
-/*   Updated: 2019/04/07 21:51:41 by mbutt            ###   ########.fr       */
+/*   Updated: 2019/04/08 12:18:13 by mbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,11 +117,29 @@ int main (void)
 	}
 //	printf("%s", placeholder);
 //	printf("%s", ft_strchr(placeholder, '\n'));
-	while(placeholder[i] != '\n')
+//	while(placeholder[i] != '\n')
+//	{
+//		printf("%c", placeholder[i]);
+//		i++;
+//	}
+	printf("%s", placeholder);
+	while(ft_strchr(dest, '\n') == NULL)
 	{
-		printf("%c", placeholder[i]);
-		i++;
+		buf = read(fd, dest, BUFF_SIZE);
+		dest[buf] = '\0';
+//		printf("%s", dest);
+		placeholder = ft_strjoin(placeholder, dest);
 	}
+//	printf("%s", placeholder);
+//	printf("%s", ft_strchr(placeholder, '\n'));
+//	while(placeholder[i] != '\n')
+//	{
+//		printf("%c", placeholder[i]);
+//		i++;
+//	}
+	printf("%s", placeholder);
+
+
 	return(0);
 }
 

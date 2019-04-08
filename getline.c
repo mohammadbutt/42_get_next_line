@@ -6,7 +6,7 @@
 /*   By: mbutt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/29 16:21:57 by mbutt             #+#    #+#             */
-/*   Updated: 2019/03/30 15:15:18 by mbutt            ###   ########.fr       */
+/*   Updated: 2019/04/08 13:11:32 by mbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,23 +24,29 @@
 #include <stdlib.h>
 int main (void)
 {
+/*
+ssize_t getline(char **dest, size_t *buf, FILE *stream);
+*/
 	FILE *source;
 	char *dest = NULL;
 	size_t len = 0;
-	ssize_t read_this;
+	ssize_t return_of_getline;
 
-	source = fopen("test.txt", "r");
+	source = fopen("test1.txt", "r");
 
-//	if (source == NULL)
-//		exit(EXIT_FAILURE);
-
+// Reads the whole file.
+/*
 	while ((read_this = getline(&dest, &len, source)) != -1)
 	{
-		printf("Retrieved line of length %zu :\n", read_this);
-//		printf("Len is %zu\n", len);
+//		printf("Retrieved line of length %zu :\n", read_this);
 		printf("%s", dest);
 	}
 
-//	free(dest);
-//	exit(EXIT_FAILURE);
+*/
+// Reads one line at a time.
+	return_of_getline = getline(&dest, &len, source);
+	printf("Return of getline:|%zu|\n", return_of_getline);
+	printf("%s", dest);
+
+	return(0);
 }

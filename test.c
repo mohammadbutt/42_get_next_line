@@ -81,7 +81,7 @@ int main (void)
 	FILE * fpointer;
 
 // opens the file and stores it in fpointer.	
-	fpointer = fopen("test.txt", "r");
+	fpointer = fopen("test1.txt", "r");
 
 	char singleLine[150];
 
@@ -97,7 +97,7 @@ int main (void)
 //--------------------------------------------------------------------------
 //Following Bluefever software youtube tutorial to see how while loops work differently
 
-	FILE *pToFile = fopen("test.txt", "r");
+	FILE *pToFile = fopen("test1.txt", "r");
 	int line = 0;
 	char input[3];
 	while (fgets(input, 3, pToFile)) // we are trying to replicate this fgets.
