@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   delte.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbutt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/27 11:17:35 by mbutt             #+#    #+#             */
-/*   Updated: 2019/04/07 21:51:45 by mbutt            ###   ########.fr       */
+/*   Created: 2019/04/06 15:17:32 by mbutt             #+#    #+#             */
+/*   Updated: 2019/04/06 22:20:02 by mbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-
-#include <unistd.h>
-#include <string.h>
 #include <stdio.h>
-#include <stdlib.h>
-#include <ctype.h>
-#include <fcntl.h>
-#include "./libft/libft.h"
 
-int	get_next_line(const int fd, char **line);
+int main (void)
+{
+	/*
+	int number;
+	number = 0x05;
 
-#define BUFF_SIZE 14
-
-#endif
+	printf("%d", number);
+	return(0);
+	*/
+	/* These three lines show you how to use the most popular Escape Sequences */
+	printf("Column A\tColumn B\tColumn C");
+	printf("\nMy Computer\'s Beep Sounds Like This: \a!\n");
+	printf("Letz\bs fix that typo and then show the backslash ");
+	printf("character \\\" she said\n");
+	printf("Does 12.5 & work?");
+	return 0;
+}
