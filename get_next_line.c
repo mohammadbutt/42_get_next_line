@@ -6,7 +6,7 @@
 /*   By: mbutt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 12:24:02 by mbutt             #+#    #+#             */
-/*   Updated: 2019/04/08 12:18:13 by mbutt            ###   ########.fr       */
+/*   Updated: 2019/04/08 20:05:23 by mbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,18 @@ int get_next_line(const int fd, char **line)
 int main (void)
 {
 	char dest[BUFF_SIZE + 1];
-	char **final_dest;
 	int buf;
 	int fd;
-	int i;
-//	int index;
+	int len;
 	char *placeholder;
+	char storage[BUFF_SIZE + 1];
+	char *one_line;
+	
 	placeholder = "";
-//	char **new_placeholder;
+//	storage = "";
+	one_line = "";
+	len = 0;
 
-	i = 0;
-//	index = 6;
 
 //	fd = open("test2.txt", O_RDONLY);
 	fd = open("test1.txt", O_RDONLY);
@@ -108,6 +109,9 @@ int main (void)
 		}
 	}
 */
+//Read the file upto buff_size or newline, whichever one comes later.	
+// Using dest
+/*
 	while(ft_strchr(dest, '\n') == NULL)
 	{
 		buf = read(fd, dest, BUFF_SIZE);
@@ -115,31 +119,27 @@ int main (void)
 //		printf("%s", dest);
 		placeholder = ft_strjoin(placeholder, dest);
 	}
-//	printf("%s", placeholder);
-//	printf("%s", ft_strchr(placeholder, '\n'));
-//	while(placeholder[i] != '\n')
-//	{
-//		printf("%c", placeholder[i]);
-//		i++;
-//	}
 	printf("%s", placeholder);
-	while(ft_strchr(dest, '\n') == NULL)
+*/
+// Using storage	
+	while(ft_strchr(storage, '\n') == NULL)
 	{
-		buf = read(fd, dest, BUFF_SIZE);
-		dest[buf] = '\0';
-//		printf("%s", dest);
-		placeholder = ft_strjoin(placeholder, dest);
+		buf = read(fd, storage, BUFF_SIZE);
+		storage[buf] = '\0';
+		placeholder = ft_strjoin(placeholder, storage);
 	}
-//	printf("%s", placeholder);
-//	printf("%s", ft_strchr(placeholder, '\n'));
-//	while(placeholder[i] != '\n')
-//	{
-//		printf("%c", placeholder[i]);
-//		i++;
-//	}
 	printf("%s", placeholder);
+// Using ft_strsub to get the 1 single line.	
+// printf("\n\n%c", placeholder[8]);
+	while(placeholder[len] != '\n')
+	{
+		len++;	
+	}
+	one_line = ft_strsub(placeholder, 0, len);
+	storage 	= ft_strsub(placeholder, len+1, ft_strlen(placeholder));
+	printf("\nPrinting one line:|%s|", one_line);
 
-
+	printf("\nPrinting stored characters: |%s|\n", storage);
 	return(0);
 }
 
