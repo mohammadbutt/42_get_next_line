@@ -1,5 +1,10 @@
+
+
 #include "get_next_line.h"
 
+/*
+*	Below functions are not mine. I just created the main to understand what the output is supposed to look like.
+*/
 char	*chop_line(char **string)
 {
 	char	*new;
