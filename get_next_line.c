@@ -6,7 +6,7 @@
 /*   By: mbutt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 12:24:02 by mbutt             #+#    #+#             */
-/*   Updated: 2019/04/09 16:15:22 by mbutt            ###   ########.fr       */
+/*   Updated: 2019/04/09 20:14:41 by mbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int get_next_line(const int fd, char **line)
 */
 int main (void)
 {
-	char dest[BUFF_SIZE + 1];
-	int buf;
+//	char dest[BUFF_SIZE + 1];
+//	int buf;
 	int fd;
 	int len;
 	char *placeholder;
@@ -124,37 +124,58 @@ int main (void)
 // Using storage
 
 // ✗	Fix this while loop ✗
+// Check for newline while joining
 	while(ft_strchr(storage, '\n') == NULL)
 	{
-		buf = read(fd, storage, BUFF_SIZE);
-		storage[buf] = '\0';
-		
-		if(placeholder[len] != '\n')
-		{
-			placeholder = ft_strjoin(placeholder, storage);
-		}
-		len++;
+	//	buf = read(fd, storage, BUFF_SIZE);
+	//	storage[buf] = '\0';
+		read(fd, storage, BUFF_SIZE);
+		storage[BUFF_SIZE] = '\0';
+//		if(placeholder[len] != '\n')
+//		{
+		placeholder = ft_strjoin(placeholder, storage);
+//		}
+//		len++;
 	}
-	len = 0;
-
-	printf("%s", placeholder);
+//	printf("      buf:|%d|\n", buf);
+//	len = 0;
+	printf("\nLength of placeholder:|%zu|\n", ft_strlen(placeholder));
+	printf("Buffer read/placeholder:\n|%s|", placeholder);
 
 // ✓	This is fine	✓ 
 	while(placeholder[len] != '\n')
 	{
 		len++;	
 	}
-
+//	printf("\n\nlen of placeholder\n\n|%d|", len);
 
 // ✓	This is fine	✓
 	one_line = ft_strsub(placeholder, 0, len);
-	printf("\n\n\nPrinting one line:|%s|", one_line);
+	printf("\n\n\nPrinting one_line:\n|%s|", one_line);
+
+//	ft_memmove(placeholder, 0, len);
+//	printf("\n\n\nPrinting one_line:\n|%s|", placeholder);
 
 // ✓	This is fine	✓
-	ft_memmove(storage, (storage + len + 1), ft_strlen(storage));
-	printf("\n\n\nPrinting stored characters: |%s|\n", storage);
-	
+//	ft_memmove(storage, (storage + len + 1), ft_strlen(storage));
+	printf("\n\nBefore storage is trimmed:\n|%s|\n", storage);
 
+//	printf("\nExperiment1:\n|%s|\n", storage+len);
+//	if (len == BUFF_SIZE)
+//		printf("\nExperiment2.1:\n|%s|\n", ft_strsub(placeholder, len-1, BUFF_SIZE));
+//	else if (len < BUFF_SIZE)
+//		printf("\nExperiment2.2:\n|%s|\n", ft_strsub(placeholder, len, (BUFF_SIZE - len)));
+	if(len >= BUFF_SIZE)
+	{
+		printf("\n\nE2.1:Printing stored characters:\n|%s|", storage);
+//		return(storage);
+	}
+	else if (len < BUFF_SIZE)
+	{
+		ft_memmove(storage, (storage + len + 1), ft_strlen(storage));	///-> Trimming storage
+		printf("\n\nE2.2:Printing stored characters:\n|%s|\n", storage);
+//		return(storage);
+	}
 
 	return(0);
 
