@@ -6,7 +6,7 @@
 /*   By: mbutt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 12:24:02 by mbutt             #+#    #+#             */
-/*   Updated: 2019/04/08 20:05:23 by mbutt            ###   ########.fr       */
+/*   Updated: 2019/04/09 16:15:22 by mbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,25 +121,42 @@ int main (void)
 	}
 	printf("%s", placeholder);
 */
-// Using storage	
+// Using storage
+
+// ✗	Fix this while loop ✗
 	while(ft_strchr(storage, '\n') == NULL)
 	{
 		buf = read(fd, storage, BUFF_SIZE);
 		storage[buf] = '\0';
-		placeholder = ft_strjoin(placeholder, storage);
+		
+		if(placeholder[len] != '\n')
+		{
+			placeholder = ft_strjoin(placeholder, storage);
+		}
+		len++;
 	}
+	len = 0;
+
 	printf("%s", placeholder);
-// Using ft_strsub to get the 1 single line.	
-// printf("\n\n%c", placeholder[8]);
+
+// ✓	This is fine	✓ 
 	while(placeholder[len] != '\n')
 	{
 		len++;	
 	}
-	one_line = ft_strsub(placeholder, 0, len);
-	storage 	= ft_strsub(placeholder, len+1, ft_strlen(placeholder));
-	printf("\nPrinting one line:|%s|", one_line);
 
-	printf("\nPrinting stored characters: |%s|\n", storage);
+
+// ✓	This is fine	✓
+	one_line = ft_strsub(placeholder, 0, len);
+	printf("\n\n\nPrinting one line:|%s|", one_line);
+
+// ✓	This is fine	✓
+	ft_memmove(storage, (storage + len + 1), ft_strlen(storage));
+	printf("\n\n\nPrinting stored characters: |%s|\n", storage);
+	
+
+
 	return(0);
+
 }
 
