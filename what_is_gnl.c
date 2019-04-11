@@ -114,3 +114,71 @@ int main (void)
 
 	return(0);
 }
+/*
+int	get_next_line(const int fd, char **line)
+{
+	char	buffer[BUFF_SIZE + 1];
+	int	bytes_read;
+	static char	*result;
+	char *nl;
+
+	ft_bzero(buffer, BUFF_SIZE);
+	bytes_read = 0;
+	if (fd < 0 || line == NULL || read(fd, &buffer, 0) < 0)
+	   return (-1);
+	if (result != NULL && ft_strchr(result, '\n') != NULL)
+	{
+		char *temp;
+
+		temp = ft_strchr(result, '\n');
+		temp[0] = '\0';
+		*line = ft_strdup(result);
+		temp = ft_strdup(&temp[1]);
+		free(result);
+		result = temp;
+		return (1);
+	}
+	while ((bytes_read = read(fd, &buffer, BUFF_SIZE - 1)) > 0)
+	{
+		buffer[bytes_read]  = '\0';
+		if (bytes_read > 0)
+		{
+			if (result == NULL)
+				result = ft_strdup(buffer);
+			else
+				result = ft_strnjoin(result, buffer, 1);
+		}
+		if (result != NULL && ft_strchr(result, '\n') != NULL)
+		{
+			nl = ft_strchr(result, '\n');
+			nl[0] = '\0';
+			*line = ft_strdup(result);
+			nl = ft_strdup(nl + 1);
+			free(result);
+			result = nl;
+			return (1);
+		}
+	}
+	if (bytes_read == 0 && result && ft_strlen(result) > 0)
+	{
+		*line = result;
+		result = NULL;
+		return (1);
+	}
+	return (0);
+}
+
+int	main(void)
+{
+	char *ptr;
+	int fd;
+	fd = open("hello.txt", O_RDONLY);
+	printf("%d\n", fd);
+	while (get_next_line(fd, &ptr) > 0)
+	{
+		printf("[%s]\n", ptr);
+		ft_strdel(&ptr);
+	}
+	return (0);
+}
+*/
