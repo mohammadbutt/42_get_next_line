@@ -6,7 +6,7 @@
 /*   By: mbutt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 10:02:27 by mbutt             #+#    #+#             */
-/*   Updated: 2019/04/11 13:43:35 by mbutt            ###   ########.fr       */
+/*   Updated: 2019/04/11 13:44:58 by mbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ int main (void)
 //Opens file
 	fd = open("test1.txt", O_RDONLY);
 
-/* Works reads and prints the first line perfectly and stores the lines upto BUFF_SIZE
+//Works - reads and prints the first line perfectly and stores the lines upto BUFF_SIZE
+/*
 //(1A)	-> Reads file in a while loop
 	printf("(1A)BUFF_SIZE:|%d|\n", BUFF_SIZE);
 	while(ft_strchr(storage, '\n') == NULL)
