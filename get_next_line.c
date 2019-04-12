@@ -6,7 +6,7 @@
 /*   By: mbutt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/11 20:01:36 by mbutt             #+#    #+#             */
-/*   Updated: 2019/04/12 11:22:32 by mbutt            ###   ########.fr       */
+/*   Updated: 2019/04/12 12:14:12 by mbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ int		get_next_line(const int fd, char **one_line)
 	
 
 	storage[len] = '\0' ;
-	s = ft_strdup(&*(storage + len + 1));
+	s = ft_strdup(&*(storage + len));
+//	free(storage);
 //	storage = ft_strdup(&(*s));
 //	printf("       s:|%s|\n", s);
 	printf(" storage:|%s|\n", storage);
@@ -67,7 +68,7 @@ int main (void)
 {
 	int fd;
 	char *one_line;
-	fd = open("test1.txt", O_RDONLY);
+	fd = open("test4.txt", O_RDONLY);
 
 //	printf("%d\n", fd);
 	get_next_line(fd, &one_line);
