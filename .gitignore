@@ -1,1 +1,2 @@
+# ignores a.out file when making a commit
 a.out
