@@ -12,9 +12,10 @@ Flag has the following access modes: O_RDONLY, O_WRONLY, O_RDWR.
 O_RDONLY stands for read only. O_WRONLY stands for write only. O_RDWR stands for read/write.
 
 To compile, include libft library as shown below:
-
+```
 gcc get_next_line.c -I. ./libft/libft.a
-
+```
 Wall Wextra Werror flag can be used to compile, which is helpful in raising warnings if a variable is left uninitalized:
-
+```
 gcc -Wall -Wextra -Werror get_next_line.c -I. ./libft/libft.a
+```
