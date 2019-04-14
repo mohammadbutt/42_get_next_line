@@ -6,7 +6,7 @@
 /*   By: mbutt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/27 11:17:35 by mbutt             #+#    #+#             */
-/*   Updated: 2019/04/13 18:50:04 by mbutt            ###   ########.fr       */
+/*   Updated: 2019/04/13 19:06:21 by mbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 
 int	get_next_line(const int fd, char **one_line);
 
-#define BUFF_SIZE 13
+#define BUFF_SIZE 20
 
 //Delete below
 //#define FD_MAX 1023

@@ -5,109 +5,67 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbutt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/11 20:01:36 by mbutt             #+#    #+#             */
-/*   Updated: 2019/04/13 18:48:30 by mbutt            ###   ########.fr       */
+/*   Created: 2019/04/13 19:15:03 by mbutt             #+#    #+#             */
+/*   Updated: 2019/04/13 20:12:21 by mbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int		get_next_line(const int fd, char **one_line)
+int get_next_line(const int fd, char **one_line)
 {
-//	static int start;
 	int len;
 	char placeholder[BUFF_SIZE + 1];
 	char *s;
 	static char *storage;
-	int i;
-
+	int buf;
+	
 	len = 0;
-	i = 0;
-//	if(!start)
-//		start = 0;
+	
 	if(!storage)
 		storage = ft_strnew(0);
-//	placeholder = ;
 
 	while(ft_strchr(storage, '\n') == NULL)
 	{
-		read(fd, placeholder, BUFF_SIZE);
-		placeholder[BUFF_SIZE] = '\0';
+		buf = read(fd, placeholder, BUFF_SIZE);
+		placeholder[buf] = '\0';
 		storage = ft_strjoin(storage, placeholder);
 	}
-//	len = 0;
-	
-//	while (s[i] != c && s[i] != '\0' && (len++ >= 0))
-//			i++;
 
-	while (storage[len] != '\n')
+	while(storage[len] != '\n')
 	{
-//		if (storage[i] != '\n')
-//		{
-//			i++;
-			len++;
-//		}
-//		else if(storage[i] == '\n')
-//			i++;
+		len++;
 	}
 
-//	while(storage[len] != '\n')
-//	{
-//		len++;
-//		i++;
-//	}
-//	len = len - start;
 	*one_line = ft_strsub(storage, 0, len);
-	
 
-	printf("       i:|%d|\n", i);
-//	printf("   i-len:|%d|\n", (i - len));
-	printf("     len:|%d|\n", len);
-	storage[len] = '\0' ;
+//	printf("    len:|%d|\n", len);
+	storage[len] = '\0';
+
 	s = ft_strdup(&*(storage + len + 1));
-	printf("       s:|%s|\n", s);
-	printf(" storage:|%s|\n", storage);
+//	s[ft_strlen(s)] = '\0';
+//	printf("storage:|%s|\n", storage);
+//	printf("      s:|%s|\n", s);
 	free(storage);
-	storage = s;
-//	printf("       s:|%s|\n", s);
-//	printf(" storage:|%s|\n", storage);
-//	printf("storage + len + 1:|%s|\n", (storage+len+1));
-	printf("one_line:|%s|\n\n\n", *one_line);
-//	printf("       s:|%s|\n\n", s);
-//	if ((len) < BUFF_SIZE)
-//		ft_memmove(storage, (storage + len + 1), ft_strlen(storage));
-//	printf("\n|%s|\n", storage);
-//	start = len + 1;
-//	printf("\n|%s|\n", *one_line);
-	
-//	start = len + start;
-//	free(storage);
-//	len = 0;
+	storage = ft_strdup(s);
+//	storage = s;
+	free(s);
+//	printf("one_line:|%s|\n\n\n", *one_line);
+
 	if(fd == -1)
 		return(-1);
 	else if (fd >= 1)
 		return(1);
-	return(0);
+	else
+		return(0);
 }
 
-int main (void)
+int main (int argc, char **argv)
 {
 	int fd;
 	char *one_line;
-	fd = open("test6.txt", O_RDONLY);
-
-//	printf("%d\n", fd);
-	get_next_line(fd, &one_line);
-//	printf("%s\n", one_line);
-	free(one_line);
-	get_next_line(fd, &one_line);
-//	printf("%s\n", one_line);
-	get_next_line(fd, &one_line);
-//	printf("%s\n", one_line);
-	get_next_line(fd, &one_line);
-//	printf("%s\n", one_line);
-//	get_next_line(fd, &one_line);
-//	printf("%s\n", one_line);
-
+	if (argc == 2)
+		fd = open(argv[1], O_RDONLY);
+	while(get_next_line(fd, &one_line) > 0)
+		printf("%s\n", one_line);
 }
-
