@@ -6,7 +6,7 @@
 /*   By: mbutt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/13 19:15:03 by mbutt             #+#    #+#             */
-/*   Updated: 2019/04/14 14:36:04 by mbutt            ###   ########.fr       */
+/*   Updated: 2019/04/14 15:18:48 by mbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,11 @@ int get_next_line(const int fd, char **one_line)
 	
 	len = 0;
 	
-	if(!storage)
+//	if(!storage)
+//		storage = ft_strnew(0);
+	if(fd == -1)
+		return(-1);
+	if(storage == NULL)
 		storage = ft_strnew(0);
 
 	while(ft_strchr(storage, '\n') == NULL)
@@ -30,9 +34,14 @@ int get_next_line(const int fd, char **one_line)
 		buf = read(fd, placeholder, BUFF_SIZE);
 		placeholder[buf] = '\0';
 		storage = ft_strjoin(storage, placeholder);
+		if(!buf)
+		{
+			printf("buf:|%d|", buf);
+			return(0);
+		}
 	}
-
-	while(storage[len] != '\n')
+	printf("buf:|%d|	", buf);
+	while((storage[len] != '\n') && (storage[len] != '\0'))
 	{
 		len++;
 	}
@@ -52,13 +61,7 @@ int get_next_line(const int fd, char **one_line)
 	free(s);
 //	printf("one_line:|%s|\n\n\n", *one_line);
 
-	if(fd == -1)
-		return(-1);
-	else if (fd >= 1)
-		return(1);
-	else if(fd == 0)
-		return(0);
-	return(0);
+	return(1);
 }
 
 int main (void)
@@ -66,18 +69,20 @@ int main (void)
 	int fd;
 	char *one_line;
 	fd = open("test1.txt", O_RDONLY);
-	printf("fd:|%d|", get_next_line(fd, &one_line));
+	
+	printf("fd:|%d|		", get_next_line(fd, &one_line));
 	printf("%s\n", one_line);
-	printf("fd:|%d|", get_next_line(fd, &one_line));
+	printf("fd:|%d|		", get_next_line(fd, &one_line));
 	printf("%s\n", one_line);
-	printf("fd:|%d|", get_next_line(fd, &one_line));
+	printf("fd:|%d|		", get_next_line(fd, &one_line));
 	printf("%s\n", one_line);
-	printf("fd:|%d|", get_next_line(fd, &one_line));
+	printf("fd:|%d|		", get_next_line(fd, &one_line));
 	printf("%s\n", one_line);
-	printf("fd:|%d|", get_next_line(fd, &one_line));
+	printf("fd:|%d|		", get_next_line(fd, &one_line));
 	printf("%s\n", one_line);
-	printf("fd:|%d|", get_next_line(fd, &one_line));
+	printf("		fd:|%d|		", get_next_line(fd, &one_line));
 	printf("%s\n", one_line);
+
 }
 
 // argc, argv test
