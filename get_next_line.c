@@ -6,7 +6,7 @@
 /*   By: mbutt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/13 19:15:03 by mbutt             #+#    #+#             */
-/*   Updated: 2019/04/13 20:12:21 by mbutt            ###   ########.fr       */
+/*   Updated: 2019/04/14 14:36:04 by mbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,32 @@ int get_next_line(const int fd, char **one_line)
 		return(-1);
 	else if (fd >= 1)
 		return(1);
-	else
+	else if(fd == 0)
 		return(0);
+	return(0);
 }
+
+int main (void)
+{
+	int fd;
+	char *one_line;
+	fd = open("test1.txt", O_RDONLY);
+	printf("fd:|%d|", get_next_line(fd, &one_line));
+	printf("%s\n", one_line);
+	printf("fd:|%d|", get_next_line(fd, &one_line));
+	printf("%s\n", one_line);
+	printf("fd:|%d|", get_next_line(fd, &one_line));
+	printf("%s\n", one_line);
+	printf("fd:|%d|", get_next_line(fd, &one_line));
+	printf("%s\n", one_line);
+	printf("fd:|%d|", get_next_line(fd, &one_line));
+	printf("%s\n", one_line);
+	printf("fd:|%d|", get_next_line(fd, &one_line));
+	printf("%s\n", one_line);
+}
+
+// argc, argv test
+/*
 
 int main (int argc, char **argv)
 {
@@ -69,3 +92,4 @@ int main (int argc, char **argv)
 	while(get_next_line(fd, &one_line) > 0)
 		printf("%s\n", one_line);
 }
+*/
