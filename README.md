@@ -19,3 +19,8 @@ Wall Wextra Werror flag can be used to compile, which is helpful in raising warn
 ```
 gcc -Wall -Wextra -Werror get_next_line.c -I. ./libft/libft.a
 ```
+# Return Value of get_next_line
+get_next_line returns -1, 0, or 1.
++ Returns 1 if a line has been read successfuly.
++ Returns 0 if the program is finished reading the file. This will occur when the last line of a file is read.
++ Returns -1 if the program was unable to read the file.
