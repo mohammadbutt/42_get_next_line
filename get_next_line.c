@@ -6,7 +6,7 @@
 /*   By: mbutt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/11 20:01:36 by mbutt             #+#    #+#             */
-/*   Updated: 2019/04/12 12:16:31 by mbutt            ###   ########.fr       */
+/*   Updated: 2019/04/13 18:48:30 by mbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 
 int		get_next_line(const int fd, char **one_line)
 {
-	static int start;
+//	static int start;
 	int len;
 	char placeholder[BUFF_SIZE + 1];
 	char *s;
 	static char *storage;
+	int i;
 
-		len = 0;
+	len = 0;
+	i = 0;
 //	if(!start)
 //		start = 0;
 	if(!storage)
@@ -33,42 +35,66 @@ int		get_next_line(const int fd, char **one_line)
 		placeholder[BUFF_SIZE] = '\0';
 		storage = ft_strjoin(storage, placeholder);
 	}
+//	len = 0;
+	
+//	while (s[i] != c && s[i] != '\0' && (len++ >= 0))
+//			i++;
 
-	while(storage[len] != '\n')
-		len++;	
-	len = len - start;
-	*one_line = ft_strsub(storage, start, len);
+	while (storage[len] != '\n')
+	{
+//		if (storage[i] != '\n')
+//		{
+//			i++;
+			len++;
+//		}
+//		else if(storage[i] == '\n')
+//			i++;
+	}
+
+//	while(storage[len] != '\n')
+//	{
+//		len++;
+//		i++;
+//	}
+//	len = len - start;
+	*one_line = ft_strsub(storage, 0, len);
 	
 
+	printf("       i:|%d|\n", i);
+//	printf("   i-len:|%d|\n", (i - len));
+	printf("     len:|%d|\n", len);
 	storage[len] = '\0' ;
-	s = ft_strdup(&*(storage + len));
-//	free(storage);
-//	storage = ft_strdup(&(*s));
-//	printf("       s:|%s|\n", s);
-	printf(" storage:|%s|\n", storage);
-	printf("one_line:|%s|\n", *one_line);
+	s = ft_strdup(&*(storage + len + 1));
 	printf("       s:|%s|\n", s);
-	printf("   start:|%d|\n", start);
-	printf("     len:|%d|\n\n", len);
+	printf(" storage:|%s|\n", storage);
+	free(storage);
+	storage = s;
+//	printf("       s:|%s|\n", s);
+//	printf(" storage:|%s|\n", storage);
+//	printf("storage + len + 1:|%s|\n", (storage+len+1));
+	printf("one_line:|%s|\n\n\n", *one_line);
+//	printf("       s:|%s|\n\n", s);
 //	if ((len) < BUFF_SIZE)
 //		ft_memmove(storage, (storage + len + 1), ft_strlen(storage));
 //	printf("\n|%s|\n", storage);
 //	start = len + 1;
 //	printf("\n|%s|\n", *one_line);
 	
-	start = len;
+//	start = len + start;
 //	free(storage);
+//	len = 0;
 	if(fd == -1)
 		return(-1);
 	else if (fd >= 1)
 		return(1);
 	return(0);
 }
+
 int main (void)
 {
 	int fd;
 	char *one_line;
-	fd = open("test4.txt", O_RDONLY);
+	fd = open("test6.txt", O_RDONLY);
 
 //	printf("%d\n", fd);
 	get_next_line(fd, &one_line);
@@ -80,7 +106,8 @@ int main (void)
 //	printf("%s\n", one_line);
 	get_next_line(fd, &one_line);
 //	printf("%s\n", one_line);
-	get_next_line(fd, &one_line);
+//	get_next_line(fd, &one_line);
 //	printf("%s\n", one_line);
 
 }
+
