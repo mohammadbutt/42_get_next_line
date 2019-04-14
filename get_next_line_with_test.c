@@ -6,7 +6,7 @@
 /*   By: mbutt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/13 19:15:03 by mbutt             #+#    #+#             */
-/*   Updated: 2019/04/14 15:18:48 by mbutt            ###   ########.fr       */
+/*   Updated: 2019/04/14 15:43:07 by mbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ int get_next_line(const int fd, char **one_line)
 		}
 	}
 	printf("buf:|%d|	", buf);
-	while((storage[len] != '\n') && (storage[len] != '\0'))
+//	while((storage[len] != '\n') && (storage[len] != '\0'))
+	while(storage[len] != '\n')	
 	{
 		len++;
 	}
