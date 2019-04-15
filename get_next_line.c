@@ -48,7 +48,7 @@ int	get_next_line(const int fd, char **one_line)
 	free(storage);
 	storage = ft_strdup(s);
 	free(s);
-	free(*one_line);
+//	free(*one_line);
 	return (1);
 }
 /*
@@ -82,10 +82,10 @@ int main (void)
 	while(get_next_line(fd, &one_line) > 0)
 		printf("%s\n", one_line);
 
-	while(1)
-	{
-	}
-	return(0);
+//	while(1)
+//	{
+//	}
+//	return(0);
 }
 
 /*

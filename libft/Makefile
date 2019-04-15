@@ -12,7 +12,8 @@
 
 NAME = libft.a
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -I. -c
+#CFLAGS = -Wall -Wextra -Werror -I. -c
+CFLAGS = -I. -c
 C_FILES = ft_*.c
 O_FILES = *.o
 
