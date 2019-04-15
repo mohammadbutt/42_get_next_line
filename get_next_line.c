@@ -6,7 +6,7 @@
 /*   By: mbutt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/14 15:19:32 by mbutt             #+#    #+#             */
-/*   Updated: 2019/04/14 20:52:37 by mbutt            ###   ########.fr       */
+/*   Updated: 2019/04/14 21:16:43 by mbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,13 @@ int	get_next_line(const int fd, char **one_line)
 		buf = read(fd, placeholder, BUFF_SIZE);
 		placeholder[buf] = '\0';
 		storage = ft_strjoin(storage, placeholder);
+
+// adding below lines		
+//		s = ft_strdup(&*(storage));
+//		free(storage);
+//		storage = ft_strdup(s);
+//		free(s);
+// adding above lines
 		if (buf == 0)
 			return (0);
 	}
@@ -77,7 +84,6 @@ int main (void)
 
 	while(1)
 	{
-
 	}
 	return(0);
 }
