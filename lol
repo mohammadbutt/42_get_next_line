@@ -1,4 +1,3 @@
-
 Hellow World 
 
 
@@ -40,7 +39,7 @@ Hellow World
 
 
 
-Shit
+Prints lines with multiple new lines
 
 
 
@@ -59,3 +58,6 @@ Shit
 
 
 Door open
+
+
+

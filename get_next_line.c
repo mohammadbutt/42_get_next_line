@@ -6,34 +6,34 @@
 /*   By: mbutt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/14 15:19:32 by mbutt             #+#    #+#             */
-/*   Updated: 2019/04/14 15:43:02 by mbutt            ###   ########.fr       */
+/*   Updated: 2019/04/14 20:52:37 by mbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int get_next_line(const int fd, char **one_line)
+int	get_next_line(const int fd, char **one_line)
 {
-	int len;
-	char placeholder[BUFF_SIZE + 1];
-	char *s;
+	int			len;
+	char		placeholder[BUFF_SIZE + 1];
+	char		*s;
 	static char *storage;
-	int buf;
+	int			buf;
 
 	len = 0;
 	if (fd == -1)
-		return(-1);
-	if (storage == NULL)
-		storage = ft_strnew(0);
+		return (-1);
+	if(storage == NULL)
+		(storage = ft_strnew(0));
 	while (ft_strchr(storage, '\n') == NULL)
 	{
 		buf = read(fd, placeholder, BUFF_SIZE);
 		placeholder[buf] = '\0';
 		storage = ft_strjoin(storage, placeholder);
-		if(buf == 0)
-			return(0);
+		if (buf == 0)
+			return (0);
 	}
-	while(storage[len] != '\n')
+	while (storage[len] != '\n')
 		len++;
 	*one_line = ft_strsub(storage, 0, len);
 	storage[len] = '\0';
@@ -41,7 +41,8 @@ int get_next_line(const int fd, char **one_line)
 	free(storage);
 	storage = ft_strdup(s);
 	free(s);
-	return(1);
+	free(*one_line);
+	return (1);
 }
 /*
 ** //Test 1
@@ -64,14 +65,37 @@ int get_next_line(const int fd, char **one_line)
 **	printf("%s\n", one_line);
 **}
 */
+
+ // Test 2
+int main (void)
+{
+	int fd;
+	char *one_line;
+	fd = open("test2.txt", O_RDONLY);
+	while(get_next_line(fd, &one_line) > 0)
+		printf("%s\n", one_line);
+
+	while(1)
+	{
+
+	}
+	return(0);
+}
+
 /*
-** // Test 2
-**int main (void)
-**{
-**	int fd;
-**	char *one_line;
-**	fd = open("test2.txt", O_RDONLY);
-**	while(get_next_line(fd, &one_line) > 0)
-**		printf("%s\n", one_line);
-**}
+ // Test3 for argc and argv
+int main(int argc, char **argv)
+{
+	int fd;
+	char *one_line;
+	if (argc == 2)
+		fd = open(argv[1], O_RDONLY);
+	while(get_next_line(fd, &one_line) > 0)
+		printf("%s\n", one_line);
+	while(1)
+	{
+
+	}
+	return (0);
+}
 */
