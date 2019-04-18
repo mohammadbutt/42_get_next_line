@@ -5,7 +5,10 @@ This project, get_next_line, opens and reads a file or input from a user and the
 Below are some notes on the functions that are being used.
 int	 open	(const char *filepath,	 int flag);
 
-RETURN VALUE: open() returns an int value, which is the file descriptor. If a file is not read successfully, then the file descriptor of -1 is returned. If a file is read successfully then a small, but a non-negative number is returned.
+RETURN VALUE: open() returns an int value, which is the file descriptor.
++ If a file is not read successfully, then the file descriptor of -1 is returned.
++ If a file is read successfully then a small, but a non-negative number is returned. A file descriptor of 3 is usually assigned to the first file that's opened.
++ Open will not assign a file descriptor of 0 (Standard input), 1(Standard output), and 2(Standard error).
 
 Flag has the following access modes: O_RDONLY, O_WRONLY, O_RDWR.
 
