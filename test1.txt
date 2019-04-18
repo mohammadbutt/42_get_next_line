@@ -2,6 +2,4 @@ Putting
 a string
 to read it
 and test it over
-
-
 and over again few times.
