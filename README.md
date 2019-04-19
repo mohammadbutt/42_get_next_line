@@ -42,3 +42,4 @@ gcc -Wall -Wextra -Werror get_next_line.c -I. ./libft/libft.a
 valgrind --log-file=output.file --leak-check=yes --tool=memcheck ./a.out
 ```
 Memory leaks are stored in `output.file` and the contents of it can be viewed by using `cat output.file` or if you know how to use vim `vim output.file`.
+Sync
