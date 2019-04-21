@@ -6,21 +6,19 @@
 /*   By: mbutt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/17 12:17:07 by mbutt             #+#    #+#             */
-/*   Updated: 2019/04/20 21:04:08 by mbutt            ###   ########.fr       */
+/*   Updated: 2019/04/20 21:05:06 by mbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int		get_next_line(const int fd, char **one_line)
+int	get_next_line(const int fd, char **one_line)
 {
-	int			len;
 	char		placeholder[BUFF_SIZE + 1];
 	char		*temp;
-	static char *s[FD_MAX];
+	static char	*s[FD_MAX];
 	int			bytes_read;
 
-	len = 0;
 	if (fd == -1 || fd > FD_MAX || (read(fd, placeholder, 0) == -1))
 		return (-1);
 	(s[fd] == NULL) && (s[fd] = ft_strnew(1));
@@ -40,6 +38,15 @@ int		get_next_line(const int fd, char **one_line)
 		s[fd] = ft_strjoin(temp, placeholder);
 		ft_memdel((void **)&temp);
 	}
+	return (step2(fd, s, one_line));
+}
+
+int	step2(int fd, char *s[], char **one_line)
+{
+	int		len;
+	char	*temp;
+
+	len = 0;
 	if (*s[fd] == '\0')
 		return (0);
 	while (s[fd][len] != '\0' && s[fd][len] != '\n')
@@ -52,7 +59,7 @@ int		get_next_line(const int fd, char **one_line)
 	return (1);
 }
 /*
-**int main (void)
+** int main (void)
 **{
 **	int fd;
 **	int ret;
