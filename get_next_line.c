@@ -6,7 +6,7 @@
 /*   By: mbutt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/17 12:17:07 by mbutt             #+#    #+#             */
-/*   Updated: 2019/04/20 22:57:45 by mbutt            ###   ########.fr       */
+/*   Updated: 2019/04/21 10:12:48 by mbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,58 @@ int main (void)
 	ret = 0;
 	fd = 0;
 	fd = open("test7_3.txt", O_RDONLY);
-	while ((ret = get_next_line(fd, &one_line) > 0))
+		while ((ret = get_next_line(fd, &one_line) > 0))
+		{
+			printf("fd should be 1:|%d|\n", ret);
+			printf("This is the line:|%s|\n\n", one_line);
+			free(one_line);
+		}
+}
+*/
+/*
+// Command line
+int main (int argc, char **argv)
+{
+	int fd;
+	int ret;
+	char *one_line;
+	ret = 0;
+	fd = 0;
+	fd = open(argv[1], O_RDONLY);
+	if (argc == 2)
+		while((ret = get_next_line(fd, &one_line) > 0))
+		{
+			printf("fd should be 1:|%d|\n", ret);
+			printf("This is the line:|%s|\n\n", one_line);
+			free(one_line);
+		}
+}
+*/
+/*
+// multiple files
+int main (void)
+{
+	int fd1;
+	int ret1;
+	char *one_line1;
+	int fd2;
+	int ret2;
+	char *one_line2;
+	fd1 = 0;
+	fd2 = 0;
+	ret1 = 0;
+	ret2 = 0;
+
+	fd1 = open("test1.txt", O_RDONLY);
+	fd2 = open("test2.txt", O_RDONLY);
+	while((ret1 = get_next_line(fd1, &one_line1) > 0) && (ret2 = get_next_line(fd2, &one_line2) > 0))
 	{
-		printf("fd should be 1:|%d|\n", ret);
-		printf("|%s|\n\n", one_line);
-		free(one_line);
+//		printf("|%d|", ret1);
+		printf("%s\n", one_line1);
+		free(one_line1);
+//		printf("|%d|", ret2);
+		printf("%s\n\n", one_line2);
+		free(one_line2);
 	}
 }
 */
