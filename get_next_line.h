@@ -6,27 +6,24 @@
 /*   By: mbutt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/27 11:17:35 by mbutt             #+#    #+#             */
-/*   Updated: 2019/04/19 09:35:29 by mbutt            ###   ########.fr       */
+/*   Updated: 2019/04/20 21:18:09 by mbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-#include <unistd.h>
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <ctype.h>
-#include <fcntl.h>
-#include "./libft/libft.h"
+# define BUFF_SIZE 2
+# define FD_MAX 4864
 
-int	get_next_line(const int fd, char **one_line);
+# include <unistd.h>
+# include <string.h>
+# include <stdlib.h>
+# include <ctype.h>
+# include <fcntl.h>
+# include "./libft/libft.h"
 
-#define BUFF_SIZE 5
-
-//Delete below
-#define FD_MAX 5200
-//Delete above
+int	get_next_line(const int fd, char **line);
+int step2(int fd, char *s[], char **line);
 
 #endif
