@@ -4,6 +4,13 @@ This project intends to mimic the functionality of getline, which reads the line
 
 # Features
 This program reads multiple different files and keeps track of where each file finished reading when a new line occurs.
+
+# Return Value of get_next_line
+get_next_line returns -1, 0, or 1.
++ Returns 1 if a line has been read successfuly.
++ Returns 0 if the program is finished reading the file. This will occur when the last line is read more than once.
++ Returns -1 if the program was unable to read the file.
+
 /* Delete Below
 RETURN VALUES:
 + If a file is not read successfully or file name is invalid, then the program returns a valus of -1.
@@ -50,18 +57,3 @@ valgrind ./a.out
 ```
 # Why it is important to check for memory leaks?
 Memory is allocated to manipulate the string. Memory allocation takes place at the heap level several times when following functions are called: `ft_strjoin()`, `ft_strsub()`, `ft_strdup()`, and strjoin_swap() because all 4 of these functions use `malloc()`. If memory is allocated then once the process is completed, memory has to be deallocated using `free()`, so system knows that memory is free to be used for something else.
-
-# Return Value of get_next_line
-get_next_line returns -1, 0, or 1.
-+ Returns 1 if a line has been read successfuly.
-+ Returns 0 if the program is finished reading the file. This will occur when the last line is read more than once.
-+ Returns -1 if the program was unable to read the file.
-
-# Memory allocation
- However, freeing memory is a rather complexed. Valgrind is a tool that can be used to check for memory leaks.
-
-# Checking memory leaks using Valgrind
-First Valgrind would have be installed if it is already not installed on a system. Following commands installs Valgrind on linux:
-```
-
-There are other ways to see memory leaks and a log of memory leaks can be stored in a file, but the above commands will just show the memory leaks on the screen without any additionals steps.
