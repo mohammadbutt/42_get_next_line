@@ -39,7 +39,6 @@ sudo apt-get install valgrind
 Once Valgrind has been installed, following commands can be used to compile a program and then run valgrind on `./a.out` to check for memory leaks:
 ```
 gcc -Wall -Wextra -Werror get_next_line.c -I. ./libft/libft.a
-valgrind --log-file=output.file --leak-check=yes --tool=memcheck ./a.out
+valgrind ./a.out
 ```
-Memory leaks are stored in `output.file` and the contents of it can be viewed by using `cat output.file` or if you know how to use vim `vim output.file`.
-Sync
+There are other ways to see memory leaks and a log of memory leaks can be stored in a file, but the above commands will just show the memory leaks on the screen without any additionals steps.
