@@ -58,3 +58,7 @@ valgrind ./a.out
 Why is it important to check for memory leaks?
 
 Memory is allocated to manipulate the string. Memory allocation takes place at the heap level several times when following functions are called: `ft_strjoin()`, `ft_strsub()`, `ft_strdup()`, and `strjoin_swap()` because all 4 of these functions use `malloc()`. If memory is allocated then once the process is completed, memory has to be deallocated using `free()`, so system knows that memory is free to be used for something else.
+
+# Snapshot of the program.
+Below is the snapshot of what the program looks like when it reads from two different files:
+<img src= "https://github.com/mohammadbutt/42_get_next_line/blob/master/output1.png">
