@@ -1,5 +1,5 @@
-# 42_get_next_line
-# Project status - In Progress
+# Get_Next_Line
+# Project status - Finished Code - Readme in progress
 This project, get_next_line, mimics the functionality of getline. It opens and reads a file or input from a user and then prints out a line.
 
 Below are some notes on the functions that are being used.
