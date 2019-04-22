@@ -1,13 +1,14 @@
-# Get_Next_Line
 # Project status - Finished Code - Readme in progress
-This project, get_next_line, mimics the functionality of getline. It opens and reads a file or input from a user and then prints out a line.
+# Get_Next_Line
+This project intends to mimic the functionality of getline, which reads the line from a source then outputs it. The purpose of thie project was to understand how memory works.
 
-Below are some notes on the functions that are being used.
-int	 open	(const char *filepath,	 int flag);
+# Features
+This program reads multiple different files and keeps track of where each file finished reading when a new line occurs.
 
-RETURN VALUE: open() returns an int value, which is the file descriptor.
-+ If a file is not read successfully, then the file descriptor of -1 is returned.
-+ If a file is read successfully then a small, but a non-negative number is returned. A file descriptor of 3 is usually assigned to the first file that's opened.
+RETURN VALUES:
++ If a file is not read successfully or file name is invalid, then the program returns a valus of -1.
++ If a file is read successfully then 1 is returned.
++ If the program is done reading a file and the last line is read again then the program will return 0.
 + Open will not assign a file descriptor of 0 (Standard input), 1(Standard output), and 2(Standard error).
 
 Flag has the following access modes: O_RDONLY, O_WRONLY, O_RDWR.
