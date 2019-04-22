@@ -55,5 +55,5 @@ sudo apt-get install valgrind
 gcc get_next_line.c main_2files.c -I. ./libft/libft.a
 valgrind ./a.out
 ```
-# Why it is important to check for memory leaks?
+Why is it important to check for memory leaks?
 Memory is allocated to manipulate the string. Memory allocation takes place at the heap level several times when following functions are called: `ft_strjoin()`, `ft_strsub()`, `ft_strdup()`, and `strjoin_swap()` because all 4 of these functions use `malloc()`. If memory is allocated then once the process is completed, memory has to be deallocated using `free()`, so system knows that memory is free to be used for something else.
