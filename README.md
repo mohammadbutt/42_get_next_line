@@ -2,10 +2,6 @@
 This project intends to mimic the functionality of getline, which reads the line from a source then outputs it. The purpose of thie project was to understand how memory works.
 
 # Table of Contents
-+ Features [Features]https://github.com/mohammadbutt/42_get_next_line/blob/master/README.md#features
-https://github.com/mohammadbutt/42_get_next_line/blob/master/README.md#return-value-of-get_next_line
-https://github.com/mohammadbutt/42_get_next_line/blob/master/README.md#installation---setting-up-environemnt
-
 
 # Features
 This program reads multiple different files and keeps track of where each file finished reading when a new line occurs.
