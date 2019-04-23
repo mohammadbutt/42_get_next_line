@@ -6,7 +6,7 @@
 /*   By: mbutt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/27 11:17:35 by mbutt             #+#    #+#             */
-/*   Updated: 2019/04/21 08:44:06 by mbutt            ###   ########.fr       */
+/*   Updated: 2019/04/23 13:53:59 by mbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include <stdlib.h>
 # include <ctype.h>
 # include <fcntl.h>
+# include <limits.h>
 # include "./libft/libft.h"
 
 int	get_next_line(const int fd, char **line);

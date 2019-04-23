@@ -6,7 +6,7 @@
 /*   By: mbutt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/14 15:40:09 by mbutt             #+#    #+#             */
-/*   Updated: 2019/03/27 13:32:10 by mbutt            ###   ########.fr       */
+/*   Updated: 2019/04/23 13:54:21 by mbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ char				*ft_strrev(char *s);
 ** Macros
 */
 
-# define SIZE_T_MAX	((1UL << 32)-1)
+# define MAX_SIZE_T	((1UL << 32)-1)
 # define FT_INT_MIN -2147483648
 # define FT_INT_MAX 2147483647
 

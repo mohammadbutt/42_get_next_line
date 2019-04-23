@@ -6,7 +6,7 @@
 /*   By: mbutt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/07 12:13:16 by mbutt             #+#    #+#             */
-/*   Updated: 2019/03/10 15:01:41 by mbutt            ###   ########.fr       */
+/*   Updated: 2019/04/23 13:54:42 by mbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	*ft_memalloc(size_t size)
 
 	i = 0;
 	memory = (unsigned char *)malloc(sizeof(unsigned char) * (size));
-	if ((!(memory)) || size > SIZE_T_MAX)
+	if ((!(memory)) || size > MAX_SIZE_T)
 		return (NULL);
 	else
 	{
