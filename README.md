@@ -60,5 +60,13 @@ Why is it important to check for memory leaks?
 Memory is allocated to manipulate the string. Memory allocation takes place at the heap level several times when following functions are called: `ft_strjoin()`, `ft_strsub()`, `ft_strdup()`, and `strjoin_swap()` because all 4 of these functions use `malloc()`. If memory is allocated then once the process is completed, memory has to be deallocated using `free()`, so system knows that memory is free to be used for something else.
 
 # Snapshot of the program.
-Below is the snapshot of what the program looks like when it reads from two different files:
-<img src= "https://github.com/mohammadbutt/42_get_next_line/blob/master/output1.png">
++ Program reads from two files.
+<img src= "https://github.com/mohammadbutt/42_get_next_line/blob/master/snapshots/output_2files.png">
+
++ Program running through command line interface.
+<img src= "https://github.com/mohammadbutt/42_get_next_line/blob/master/snapshots/output_cli.png">
+
+Above are the snapshots of what the program looks like when it reads from valid files. First 4 lines of all files have 1, but the last line has 0 because the program finised reading the file and got to the end of it.
+
++ Program reads an invalid file and returns -1.
+<img src="https://github.com/mohammadbutt/42_get_next_line/blob/master/snapshots/output_invalid.png">
