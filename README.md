@@ -66,7 +66,7 @@ Memory is allocated to manipulate the string. Memory allocation takes place at t
 + Program running through command line interface.
 <img src= "https://github.com/mohammadbutt/42_get_next_line/blob/master/snapshots/output_cli.png">
 
-Above are the snapshots of what the program looks like when it reads from valid files. First 4 lines of all files have 1 containing the text it read from a file, but the last line has 0 because the program finised reading the file and got to the end of it.
+Above are the snapshots of the program when it reads from valid files. First four lines return 1, containing the text it read from the file, but the last line returns 0 because the program finised reading the file.
 
 + Program returns -1 because the file is invalid.
 <img src="https://github.com/mohammadbutt/42_get_next_line/blob/master/snapshots/output_invalid.png">
