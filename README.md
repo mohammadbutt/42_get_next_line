@@ -1,8 +1,6 @@
 # Get_Next_Line
 This project intends to mimic the functionality of getline, which reads the line from a source then outputs it. The purpose of thie project was to understand how memory works.
 
-# Table of Contents
-
 # Features
 This program reads multiple different files and keeps track of where each file finished reading when a new line occurs.
 
