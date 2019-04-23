@@ -1,4 +1,3 @@
-# Project status - Finished Code - Readme in progress
 # Get_Next_Line
 This project intends to mimic the functionality of getline, which reads the line from a source then outputs it. The purpose of thie project was to understand how memory works.
 
