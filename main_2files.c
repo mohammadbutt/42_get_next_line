@@ -6,7 +6,7 @@
 /*   By: mbutt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/21 11:29:06 by mbutt             #+#    #+#             */
-/*   Updated: 2019/04/22 16:25:48 by mbutt            ###   ########.fr       */
+/*   Updated: 2019/04/22 18:32:45 by mbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,9 @@ int main (void)
 	{
 		if (ret1 > 0 && ret2 > 0)
 		{
-			printf("|%d|", ret1);
-			printf("File 1|%s|\n", line_file1);
+			printf("File1:|%d||%s|\n", ret1, line_file1);
 			free(line_file1);
-			printf("|%d|", ret2);
-			printf("File 2|%s|\n\n", line_file2);
+			printf("File2:|%d||%s|\n\n", ret2, line_file2);
 			free(line_file2);
 		}
 		if (ret1 == -1 || ret2 == -1)
@@ -49,8 +47,6 @@ int main (void)
 	}
 	ret1 = get_next_line(fd1, &line_file1);
 	ret2 = get_next_line(fd2, &line_file2);
-	printf("|%d|", ret1);
-	printf("File 1|%s|\n", line_file1);
-	printf("|%d|", ret2);
-	printf("File 2|%s|\n\n", line_file2);
+	printf("File 1:|%d||%s|\n", ret1, line_file1);
+	printf("File 2:|%d||%s|\n\n", ret2, line_file2);
 }

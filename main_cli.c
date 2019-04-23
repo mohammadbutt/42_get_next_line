@@ -6,7 +6,7 @@
 /*   By: mbutt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/21 11:57:12 by mbutt             #+#    #+#             */
-/*   Updated: 2019/04/21 12:35:25 by mbutt            ###   ########.fr       */
+/*   Updated: 2019/04/22 18:43:07 by mbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,16 @@ int main (int argc, char **argv)
 		{
 			if (ret1 > 0)
 			{
-				printf("|%s|\n", one_line);
+				printf("|%d||%s|\n", ret1, one_line);
 				free(one_line);
 			}
 			if (ret1 == -1)
-			{
-				printf("File does not exist");
+//			{
+//				printf("|%d|File does not exist\n\n", ret1);
 				break;
-			}
+//			}
 		}
-
+		ret1 = get_next_line(fd1, &one_line);
+		printf("|%d||%s|\n\n", ret1, one_line);
 	}
 }
