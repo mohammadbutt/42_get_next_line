@@ -1,23 +1,23 @@
 # Get_Next_Line
-This project intends to mimic the functionality of getline, which reads the line from a source then outputs it. The purpose of thie project was to understand how memory works.
+This project intends to mimic the functionality of getline, which reads the line from a source then outputs it. The purpose of this project was to understand how memory works.
 
 # Features
 This program reads multiple different files and keeps track of where each file finished reading when a new line occurs.
 
-# Return Value of get_next_line
+# Return Values of get_next_line
 get_next_line returns -1, 0, or 1.
 + Returns 1 if a line has been read successfuly.
 + Returns 0 if the program is finished reading the file. This will occur when the last line is read more than once.
 + Returns -1 if the program was unable to read the file.
 
 # Installation - Setting up environemnt
-To compile, open `libft` folder and then type the following commands: include libft library as shown below:
+To compile, open `libft` folder and then type the following commands:
 ```
 make fclean
 make re
 make clean
 ```
-`make fclean` will remove the libft.a static library. `make re` wil recompile the library to create .o and static library. `make clean` will remove the .o files leaving the folder with .c and libft.a static file. This is important because operating systems have different architecture, so the static library has to be created again.
+`make fclean` will remove the libft.a static library. `make re` wil recompile the library to create .o and static library. `make clean` will remove the .o files leaving the folder with .c and libft.a static library. This is important because operating systems have different architecture, so the static library has to be created again.
 
 # Running the program
 
