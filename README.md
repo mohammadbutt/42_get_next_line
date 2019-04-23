@@ -27,7 +27,7 @@ There are three different main files that can be used one at a time to test the 
 gcc get_next_line.c main_1file.c -I. ./libft/libft.a
 ./a.out
 ```
-To run the program with command line interface, where the user can enter the file name on the command line, use the following commands.
+To run the program with command line interface, where the user can enter the file name, use the following commands.
 
 ```
 gcc get_next_line.c main_cli.c -I. ./libft/libft.a
