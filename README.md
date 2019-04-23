@@ -10,20 +10,6 @@ get_next_line returns -1, 0, or 1.
 + Returns 0 if the program is finished reading the file. This will occur when the last line is read more than once.
 + Returns -1 if the program was unable to read the file.
 
-/* Delete Below
-RETURN VALUES:
-+ If a file is not read successfully or file name is invalid, then the program returns a valus of -1.
-+ If a file is read successfully then 1 is returned.
-+ If the program is done reading a file and the last line is read again then the program will return 0.
-+ Open will not assign a file descriptor of 0 (Standard input), 1(Standard output), and 2(Standard error).
-
-Flag has the following access modes: O_RDONLY, O_WRONLY, O_RDWR.
-
-O_RDONLY stands for read only. O_WRONLY stands for write only. O_RDWR stands for read/write.
-
-*/ Delete above
-
-
 # Installation - Setting up environemnt
 To compile, open `libft` folder and then type the following commands: include libft library as shown below:
 ```
