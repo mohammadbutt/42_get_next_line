@@ -34,6 +34,7 @@ get_next_line returns -1, 0, or 1.
 + Returns 0 if the program is finished reading the file. This will occur when the last line is read more than once.
 + Returns -1 if the program was unable to read the file.
 
+---
 # Installation - Setting up environemnt
 To compile, open `libft` folder and then type the following commands:
 ```
