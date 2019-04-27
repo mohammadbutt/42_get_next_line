@@ -14,7 +14,7 @@ CD
 EF
 ```
 <table>
-  <tr>
+<tr>
     <td>A</td>
     <td>B</td>
     <td>\n</td>
@@ -24,7 +24,7 @@ EF
     <td>E</td>
     <td>F</td>
     <td>\n</td>
-  </tr>
+</tr>
 # Return Values of get_next_line
 get_next_line returns -1, 0, or 1.
 + Returns 1 if a line has been read successfuly.
