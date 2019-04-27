@@ -6,6 +6,12 @@ There are some difference between getline and get_next_line. getline(3) function
 # Features
 This program reads multiple different files and keeps track of where each file finished reading when a new line occurs.
 
+# Return Values of get_next_line
+get_next_line returns -1, 0, or 1.
++ Returns 1 if a line has been read successfuly.
++ Returns 0 if the program is finished reading the file. This will occur when the last line is read more than once.
++ Returns -1 if the program was unable to read the file.
+
 # Complexity of the project
 Reading a file and displaying the output is not too hard. Let's suppose we have a file that looks as shown below:
 ```
@@ -27,12 +33,6 @@ EF
   </tr>
 </table>
 If the buff_size is set to 3, which is how many characters the program will read each time, then it's easy to create a simple program. Because the program will read `AB\n` 3 bytes and then disaply it. But if the buff size is changed to 6, now the program will display first and second line, instead of disaplying 1 line. Because the project also requires for file to be read succefully an only show 1 line at a time, no matter what the buff_size is, extra characters that are read had to be stored.
-
-# Return Values of get_next_line
-get_next_line returns -1, 0, or 1.
-+ Returns 1 if a line has been read successfuly.
-+ Returns 0 if the program is finished reading the file. This will occur when the last line is read more than once.
-+ Returns -1 if the program was unable to read the file.
 
 ---
 # Installation - Setting up environemnt
