@@ -25,6 +25,7 @@ EF
 <td>F</td>
 <td>\n</td>
 </tr>
+  </table>
 # Return Values of get_next_line
 get_next_line returns -1, 0, or 1.
 + Returns 1 if a line has been read successfuly.
