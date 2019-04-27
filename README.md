@@ -15,15 +15,15 @@ EF
 ```
 <table>
 <tr>
-    <td>A</td>
-    <td>B</td>
-    <td>\n</td>
-    <td>C</td>
-    <td>D</td>
-    <td>\n</td>
-    <td>E</td>
-    <td>F</td>
-    <td>\n</td>
+<td>A</td>
+<td>B</td>
+<td>\n</td>
+<td>C</td>
+<td>D</td>
+<td>\n</td>
+<td>E</td>
+<td>F</td>
+<td>\n</td>
 </tr>
 # Return Values of get_next_line
 get_next_line returns -1, 0, or 1.
