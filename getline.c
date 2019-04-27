@@ -1,18 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <fcntl.h>
 int main (void)
 {
 /*
 ssize_t getline(char **dest, size_t *buf, FILE *stream);
 */
-	FILE *source;
-	char *dest = NULL;
-	size_t len = 0;
-	ssize_t return_of_getline;
+	FILE *fd1;
+	char *line = NULL;
+	size_t buff_size = 0;
+//	ssize_t return_of_getline;
 	int 	ret;
 
-	source = fopen("tests/test4.txt", "r");
-
+	fd1 = fopen("tests/test4.txt", "r");
+//	fd1 = open("tests/test4.txt", O_RDONLY);
 // Reads the whole file.
 /*
 	while ((read_this = getline(&dest, &len, source)) != -1)
@@ -32,13 +33,14 @@ ssize_t getline(char **dest, size_t *buf, FILE *stream);
 	printf("%s\n\n", dest);
 */
 
-	while((ret = getline(&dest, &len, source)))
+	while((ret = getline(&line, &buff_size, fd1)))
 	{
 		if (ret > 0)
 		{
-			printf("|%s|\n", dest);
+			printf("%s", line);
 		}
-		if ()
+		else
+			break;
 	}
 
 	return(0);
