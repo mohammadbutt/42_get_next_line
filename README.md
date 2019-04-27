@@ -1,7 +1,7 @@
 # Get_Next_Line
 This project intends to mimic the functionality of getline, which reads the line from a source then outputs it. The purpose of this project was to understand how memory works.
 
-There are some difference between getline and get_next_line. getline(3) function uses fopen(), which takes a **FILE stream**. 
+There are some difference between getline and get_next_line. getline(3) function uses fopen() because it gives`FILE* stream`. However, get_next_line uses open(2) because it gives a file descriptor, and the project requires file descriptor.
 
 # Features
 This program reads multiple different files and keeps track of where each file finished reading when a new line occurs.
