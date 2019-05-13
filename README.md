@@ -46,7 +46,7 @@ EF
 If the buff_size is set to 3, which is how many characters the program will read each time, then it's easy to create a simple program. Because the program will read `AB\n` 3 bytes and then disaply it. But if the buff size is changed to 6, now the program will display first and second line, instead of disaplying 1 line. Because the project also requires for file to be read succefully an only show 1 line at a time, no matter what the buff_size is, extra characters that are read had to be stored.
 
 ---
-# Installation - Setting up environemnt
+# Installation - Setting up environment
 To compile, open `libft` folder and then type the following commands:
 ```
 make fclean
