@@ -4,6 +4,7 @@ This project intends to mimic the functionality of getline, which reads the line
 There are some difference between getline and get_next_line. getline(3) function uses fopen(3) because it gives`FILE* stream`. However, get_next_line uses open(2) because it gives a file descriptor, and the project requires file descriptor.
 
 `FILE*` can be converted into a file descriptor using fileno(3). But the opposite is not possible.
+
 ---
 # Table of Contents
 * [Features](#features)
